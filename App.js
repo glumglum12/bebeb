@@ -21,7 +21,7 @@ import mixRomantico from './img/mixRomantico.png'
 import mixLuan from './img/mixLuan.png';
 import menosMais from './img/menosEmais.png';
 import noviAtualizado from './img/noviAtualizado.jpg';
-import perfil from './img/perfil.png';
+import perfil from './img/bruno.jpg';
 
 import artista1 from './img/artista1.png';
 import artista2 from './img/artista2.png';
@@ -71,6 +71,14 @@ import love from './img/lo.jpg';
 import cor from './img/cor.jpg';
 import jr from './img/jr.jpg';
 import bk from './img/bk.jpeg';
+
+
+import TrocarFoto from '././components/TrocarFoto';
+import TocarMusica from '././components/TocarMusica';
+import QrCode from '././components/QrCode';
+
+
+
 
 function HomeScreen({ navigation }) {
   const[login,setLogin] = useState();
@@ -205,10 +213,17 @@ function DetailsScreen({ navigation }) {
       <View style={styles.container8}>
    
 
+     
+      <TouchableOpacity  onPress={() => navigation.push('TrocarFoto')}>
       <Image 
       style={styles. imgPerfil3}
       source = {perfil}
+      
         />
+       
+
+        </TouchableOpacity>
+        
 
 <TouchableOpacity style={styles.controlButton8}>
 <Text style={styles.controlButtonText7}>Tudo </Text>
@@ -289,11 +304,10 @@ function DetailsScreen({ navigation }) {
     </View>
 
     <View style={styles.coluna4}>
-
-    <Image 
+    <TouchableOpacity   onPress={() => navigation.push('TocarMusica')}> <Image 
     style={styles. imgCard1}
     source = {pagode}
-      />
+      /></TouchableOpacity>
 
   <Text style={styles.textCard}> Pagodeira </Text>
     </View>
@@ -561,11 +575,16 @@ function BibliotecaScreen({ navigation }) {
               </View>
 
               <View style={styles.colunaIcon22}>
-                <Image
-                  style={styles.image3}
-                  source={moreImg}
+                <TouchableOpacity  onPress={() => navigation.push('QrCode')}>
+      <Image 
+      style={styles. image3}
+      source = {moreImg}
+      
+        />
+       
 
-                />
+        </TouchableOpacity>
+        
               </View>
 
 
@@ -883,7 +902,7 @@ function DevScreen({ navigation }) {
               </View>
 
               <View style={styles.colunatext21}>
-                <Text style={styles.texto}> Desenvolvedores </Text>
+                <Text style={styles.texto}> Devs </Text>
 
               </View>
 
@@ -923,7 +942,7 @@ function DevScreen({ navigation }) {
 
       <View style={styles.colunaNome}>
         <Text style={styles.nome}> Joice Leal </Text>
-        <Text style={styles.telefone}>(55)11-95769-0907 </Text>
+        <Text style={styles.telefone}>(55)11-98992-1948</Text>
       </View>
       </View>
 
@@ -961,7 +980,7 @@ function DevScreen({ navigation }) {
 
       <View style={styles.colunaNome}>
         <Text style={styles.nome}> Stephany Ramos </Text>
-        <Text style={styles.telefone}> (55)11-95769-0907 </Text>
+        <Text style={styles.telefone}> (55)11-98526-1888 </Text>
       </View>
       </View>
 
@@ -980,7 +999,7 @@ function DevScreen({ navigation }) {
 
       <View style={styles.colunaNome}>
         <Text style={styles.nome}> Thiago da Silva </Text>
-        <Text style={styles.telefone}> (55)11-95769-0907 </Text>
+        <Text style={styles.telefone}> (55)11-94862-4468</Text>
       </View>
       </View>
     
@@ -1037,6 +1056,9 @@ function App() {
         <Stack.Screen name="Details" component={DetailsScreen} options={{headerShown:false}} />
         <Stack.Screen name="Biblioteca" component={BibliotecaScreen} options={{headerShown:false}} />
         <Stack.Screen name="Dev" component={DevScreen} options={{headerShown:false}} />
+        <Stack.Screen name="TocarMusica" component={TocarMusica} options={{headerShown:false}} />
+        <Stack.Screen name="TrocarFoto" component={TrocarFoto} options={{headerShown:false}} />
+        <Stack.Screen name="QrCode" component={QrCode} options={{headerShown:false}} />
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -1992,13 +2014,7 @@ fontSize:15,
               fontSize: 22, 
               marginBottom:20,
              },
-              texto: {
-                paddingLeft: 20,
-                fontWeight: '500',
-                fontSize:23,
-                alignItems: 'center',
-                color:'white',
-              },
+           
 
 
 
